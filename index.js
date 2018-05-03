@@ -1,19 +1,3 @@
-# google-map-mvvm
-a simple mvvm for google map | 以MVVM的方式使用谷歌地图
-
-## usage | 使用
-
-html
-
-```
-<script src="./dist/google-map-mvvm.umd.js"></script>
-<script src="./index.js"></script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
-```
-
-index.js
-
-```
 window.initMap = function () {
   const map = new google.maps.Map(document.getElementById('map'), {
     zoom: 5,
@@ -72,37 +56,3 @@ window.initMap = function () {
     items,
   }, map)
 }
-
-```
-
-## CMD && ES6
-
-install
-
-```
-npm i google-map-mvvm
-```
-
-use
-
-```
-const GoogleMapMvvm = require('google-map-mvvm')
-
-//or ES6
-//import GoogleMapMvvm from 'google-map-mvvm'
-```
-
-## apis
-
-
-
-
-## try it out | 体验一下
-
-```
-git clone https://github.com/postor/google-map-mvvm.git
-cd google-map-mvvm
-npm install && npm run build && npm run start
-```
-
-open http://localhost:8080

@@ -1,0 +1,26 @@
+{
+  "name": "google-map-mvvm",
+  "version": "1.0.0",
+  "description": "a simple mvvm for google map | 以MVVM的方式使用谷歌地图",
+  "main": "dist/google-map-mvvm.js",
+  "scripts": {
+    "build": "microbundle -i src/GoogleMapMvvm.js -o dist --name=GoogleMapMvvm",
+    "start": "http-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/postor/google-map-mvvm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/postor/google-map-mvvm/issues"
+  },
+  "homepage": "https://github.com/postor/google-map-mvvm#readme",
+  "devDependencies": {
+    "http-server": "^0.11.1",
+    "microbundle": "^0.4.4"
+  }
+}
