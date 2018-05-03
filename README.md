@@ -94,8 +94,89 @@ const GoogleMapMvvm = require('google-map-mvvm')
 
 ## apis
 
+### config
 
+```
+const config = {
+    // items to render
+    items: [{
+        // constructor
+        Constructor: google.maps.Polyline,
 
+        // param for constructor
+        data: {
+            ...
+        },
+
+        // listen to events
+        listeners:{
+          // like click
+          click: function(e){
+            ...
+          }
+        },
+    }], 
+    // methods
+    methods: {
+        log: function(){}
+    },
+    ready: function(){}
+}
+
+new GoogleMapMvvm(config,map) 
+```
+- ready: this = GoogleMapMvvm instance
+- methods: in each method, this = GoogleMapMvvm instance
+- listeners: in each listener, this = item in items
+- item.$ref: the instance of item.Constructor
+- item.$vm: GoogleMapMvvm instance
+
+### context
+
+```
+const config = {
+    items: [{
+        Constructor: google.maps.Polyline,
+        data: {
+            ...
+        },
+        listeners:{
+          click: function(e){
+            // call from listener
+            this.$vm.log(this)
+          }
+        },
+    }], 
+    // methods
+    methods: {
+        log: function(...args){
+            console.log(args)
+        }
+    },
+    ready: function(){
+        // call from ready
+        this.log('ready')
+    }
+}
+const vm = new GoogleMapMvvm(config,map) 
+
+// call from outside
+vm.log('outside')
+```
+
+### setItems, addItem, removeItem
+
+```
+// update all
+vm.$setItems(items)
+
+// add
+vm.$addItem(item)
+
+// remove
+vm.$removeItem(vm.$items[0])
+```
+use `this` instead of `vm` in `ready` or `method`, use `this.$vm` in `listener` 
 
 ## try it out | 体验一下
 

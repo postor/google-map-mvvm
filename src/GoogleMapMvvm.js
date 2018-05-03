@@ -3,20 +3,24 @@
  */
 class GoogleMapMvvm {
   constructor(conf, map) {
-    this.$conf = conf
+    this.$conf = {
+      methods: {},
+      ready: function(){},
+      items: [],
+      ...conf,
+    }
+
     this.$map = map
     this.$items = []
     this.$parseMethods()
-    this.$setItems(conf.items || [])
+    this.$setItems(this.$conf.items)
+    this.$conf.ready.call(this)
   }
 
   $parseMethods() {
-    if (!this.$conf.methods) {
-      return
-    }
-
     for (let i in this.$conf.methods) {
-      this[i] = this.$conf.methods[i].bind(this)
+      this[i] = this.$conf.methods[i]
+      this[i].bind(this)
     }
   }
 
@@ -48,7 +52,15 @@ class GoogleMapMvvm {
     this.$items = this.items.concat([item])
   }
 
-  $removeItem(i) {
+  $removeItem(item) {
+    const i = this.$items.indexOf(item)
+    if(i < 0){
+      console.log(`remove an item not in map items`,{
+        item,
+        items: this.$items,
+      })
+      return
+    }
     this.$$_removeItem(this.$items[i])
     this.$items.splice(i, 1)
     this.$items = this.$items.concat()

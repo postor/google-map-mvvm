@@ -1,6 +1,6 @@
 {
   "name": "google-map-mvvm",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a simple mvvm for google map | 以MVVM的方式使用谷歌地图",
   "main": "dist/google-map-mvvm.js",
   "scripts": {
