@@ -1,5 +1,6 @@
 # google-map-mvvm
-a simple mvvm for google map | 以MVVM的方式使用谷歌地图
+
+data map drawings on google map | 以数据来映射谷歌上的矢量绘制
 
 ## usage | 使用
 
