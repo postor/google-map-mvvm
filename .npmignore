@@ -1,1 +1,5 @@
+examples
+src
+index.*
+.vscode
 !dist

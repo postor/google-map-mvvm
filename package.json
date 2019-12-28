@@ -1,6 +1,6 @@
 {
   "name": "google-map-mvvm",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "a simple mvvm for google map | 以MVVM的方式使用谷歌地图",
   "main": "dist/google-map-mvvm.js",
   "scripts": {
@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/postor/google-map-mvvm#readme",
   "devDependencies": {
-    "http-server": "^0.11.1",
-    "microbundle": "^0.4.4"
+    "http-server": "^0.12.0",
+    "microbundle": "^0.11.0"
   }
 }
