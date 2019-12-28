@@ -2,6 +2,8 @@
 
 data map drawings on google map | 以数据来映射谷歌上的矢量绘制
 
+quick glance: https://www.youtube.com/watch?v=8-SY-ugc5fU&list=PLM1v95K5B1ntVsYvNJIxgRPppngrO_X4s
+
 ## usage | 使用
 
 html
